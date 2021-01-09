@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluacion de metodos - js</title>
+  <script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
+</head>
+<body>
+  <script>
+    const arreglo = [1,2,3,4,5];
+    const objeto = [{name: 'Daniel', lastname: 'Camacho'}, {name: 'Georg', lastname: 'Berger'}, {name: 'Erik', lastname: 'Perez'}];
+    
+    arreglo.forEach(row => {
+      console.log('Foreach: ' + row);
+    });
+    
+    let filtro = arreglo.filter(row => row > 3 );
+    console.log('Filtro: ' + filtro);
+
+    let map = arreglo.map((row) => row * 2 );
+    console.log('Map: ' + map);
+
+    const findIndex = arreglo.findIndex((row) => row === 5 );
+    console.log('findIndex: ' + findIndex);
+
+    const contains = _.contains(arreglo, 10); // Devuelve true por que lo contiene pero si asignamos uno mayor ej: 50 retorna false
+    console.log(contains);
+
+    const pluck = _.pluck(objeto, 'lastname'); // Recolecta y extrae las propiedades del objeto especificado
+    console.log(pluck);
+
+    const without = _.without(arreglo, 1,2,3,4); // Retorna una copia de la cadena menos el elemento/s Especificado.
+    console.log('Without: ' + without);
+
+  </script>
+</body>
+</html>
